@@ -48,29 +48,40 @@ $("#submitButton").click(function () {
             console.log(index, value);
             var letter = ''; //initialize aas empty
             
-            for (var i=0; i < userText.length; i++){
-            letter = userText[i];
+           // for (var i=0; i < userText.length; i++){
+            
+                letter = userText[index];
 
                 console.log('letter var = ', letter); //check what we got from array
                 
-            if(phoneticAlfa.letter){
-
-                console.log('are we grabbing correct thing from our data thingy?', phoenticAlfa.letter); 
+                console.log('are we grabbing correct thing from our data thingy?', phoneticAlfa[letter]); 
                 
-              result += phoneticAlfa[letter] + ' ';
-                break
-            }
-            else{
-              result += letter + ' (Not in NATO alphabet) ';
-            }
-          }
-          $('#textOutput').text(result);
-          });
-        });
-    });
+                result += phoneticAlfa[letter] + ' ';
+                console.log('result', result);
 
+            // if(phoneticAlfa[letter]){
+
+            //     console.log('are we grabbing correct thing from our data thingy?', phoneticAlfa.letter); 
+                
+            //   result += phoneticAlfa[letter] + ' ';
+            //     break
+            // }
+            // else{
+            //   result += letter + ' (Not in NATO alphabet) ';
+            // }
+         // }
+          
+          }); //closes .each()   
+
+         $('#textOutput').text(result);
+
+        });
+        
+ 
 
 $('#clear').click(function () {
     $("#userText").val("")
     $('#textOutput').val("")
+});
+
 });
