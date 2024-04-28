@@ -46,10 +46,17 @@ $("#submitButton").click(function () {
 
         $.each(userText, (index, value)=> {
             console.log(index, value);
-
+            var letter = ''; //initialize aas empty
+            
             for (var i=0; i < userText.length; i++){
-            var letter = userText[i];
-            if(phoneticAlfa[letter]){
+            letter = userText[i];
+
+                console.log('letter var = ', letter); //check what we got from array
+                
+            if(phoneticAlfa.letter){
+
+                console.log('are we grabbing correct thing from our data thingy?', phoenticAlfa.letter); 
+                
               result += phoneticAlfa[letter] + ' ';
                 break
             }
